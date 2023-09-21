@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script> -->
+</head>
+
+
+<body>
+
+
+
+    <div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="box1">
+
+
+
+            <div class="subbox1">
+
+                <div id="card1" class="grid-box">
+
+                    <p style="font-weight: bold;">Total Accounts Receivable</p>
+                    <p style="margin: 10px; color: blue; font-weight: 700;">$6,621,280</p>
+
+                </div>
+                <div id="card2" class="grid-box">
+
+                    <p style="font-weight: bold;">Total Accounts Payable</p>
+                    <p style="margin: 10px; color: red; font-weight: 700;">$1,630,270</p>
+
+                </div>
+                <div id="card3" class="grid-box">
+                    <p style="font-weight: bold;">Equity Ratio</p>
+                    <p style="margin: 10px; color: darkblue; font-weight: 700; font-size: 55px;">75.38%</p>
+
+
+                </div>
+                <div id="card4" class="grid-box">
+                    <p style="font-weight: bold;">Debt Equity</p>
+                    <p style="margin: 10px; color: darkblue; font-weight: 700; font-size: 55px;">1.10%</p>
+
+
+                </div>
+                <div id="card5" class="grid-box">
+                    <p style="font-weight: bold; margin-top: -6px;">Current Ratio</p>
+
+                    <img style="width: 102px;" src="b-1.png" alt="image">
+
+                </div>
+                <div id="card6" class="grid-box">
+                    <p style="font-weight: bold; margin-top: -6px;">DSI</p>
+                    <img style="width: 102px;" src="up-1.png" alt="image">
+
+                </div>
+                <div id="card7" class="grid-box">
+                    <p style="font-weight: bold; margin-top: -6px;">DSO</p>
+                    <img style="width: 102px;" src="r-1.png" alt="image">
+
+                </div>
+                <div id="card8" class="grid-box">
+                    <p style="font-weight: bold; margin-top: -6px;">DPO</p>
+                    <img style="width: 102px;" src="g-1.png" alt="image">
+
+                </div>
+
+            </div>
+
+
+            <div class="subbox2">
+                <p style="font-weight: bold; margin-top: 23px; margin-left:23px;">Total accounts receivable and payable
+                    aging</p>
+                <canvas id="myChart" style="  position: relative;
+                top: 30px; color: black;  height: 321px;
+    width: 453px;"></canvas>
+
+
+            </div>
+
+        </div>
+
+        <div class="box2">
+
+            <!-- hi i am developing application page -->
+
+            <div class="part1" style="position: relative;
+            top: 60px;
+            color: black;
+            height: 286px;
+            width: 537px;
+            display: block;
+            box-sizing: border-box;
+            left: 83px;">
+
+                <canvas id="myChart2">
+
+
+                </canvas>
+            </div>
+
+            <div class="part2" style="display: block;
+            box-sizing: border-box;
+            height: 276px;
+            width: 663px;
+            position: relative;
+            left: 300px;
+            top: 58px;">
+
+                <canvas id="myChart3">
+                </canvas>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Current', '1-30', '31-60', '61-90', '91+'],
+                datasets: [{
+                    label: 'Amount receivable',
+                    data: [3000000, 2500000, 1500000, 1000000, 400000],
+                    borderWidth: 1,
+                    backgroundColor: ['blue', 'blue', 'blue', 'blue', 'blue']
+                },
+
+                {
+                    label: 'Amount payable',
+                    data: [2000000, 350000, 350000, 420000, 45000],
+                    backgroundColor: ['red', 'red', 'red', 'red', 'red']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+
+
+                }
+            }
+        });
+
+
+        const ctx1 = document.getElementById('myChart2');
+
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Current', '1-30', '31-60', '61-90', '91+'],
+                datasets: [{
+                    label: 'Net Working capital',
+                    data: [27700, 3780000, 248700, 255700, 2263300, 199500, 365000, 560000, 100000, 323800, 243000, 0],
+                    borderWidth: 1,
+                    backgroundColor: ['blue', 'blue', 'blue', 'blue', 'blue']
+                },
+
+                {
+                    label: 'Gross working capital',
+                    data: [200000, 2500000, 70000, 90000, 43000, 450000, 0, 323800, 200000, 93000],
+                    backgroundColor: ['yellow', 'yellow', 'yellow', 'yellow', 'yellow']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+
+
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('myChart3');
+
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Current', '1-30', '31-60', '61-90', '91+'],
+                datasets: [{
+                    label: 'Amount receivable',
+                    data: [3000000, 2500000, 1500000, 1000000, 400000],
+                    borderWidth: 1,
+                    backgroundColor: ['yellow', 'yellow', 'yellow', 'yellow', 'yellow']
+                },
+
+                {
+                    label: 'Amount payable',
+                    data: [2000000, 350000, 350000, 420000, 45000],
+                    backgroundColor: ['pink', 'pink', 'pink', 'pink', 'pink']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+
+
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
